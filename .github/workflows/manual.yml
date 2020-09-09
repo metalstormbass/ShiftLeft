@@ -50,7 +50,7 @@ jobs:
             main/shiftleft image-scan -t 1800 -i ./logicdemo.tar
       continue-on-error: true
 
-#Scan Web Appkication Code    
+#Scan Web Application Code    
     - name: ShiftLeft SourceGuard Web Application Scan
       run: |        
             main/shiftleft sourceguard -s VulnerableWebApp/
