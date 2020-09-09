@@ -28,7 +28,7 @@ jobs:
       run: |
             chmod +x shiftleft
              ./shiftleft iac-assessment --path . >> output.json
-             jq ./output.json
+             cat output.json | jq 
       continue-on-error: true
     
  
