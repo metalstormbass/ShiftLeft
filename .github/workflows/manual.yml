@@ -44,8 +44,14 @@ jobs:
       continue-on-error: true
     
  
-#Scan IaC code      
-    - name: ShiftLeft IaC Scan
+#Scan Container Image      
+    - name: ShiftLeft Container Scan
       run: |        
-            main/shiftleft image-scan -i ./logicdemo.tar
+            main/shiftleft image-scan -t 1800 -i ./logicdemo.tar
+      continue-on-error: true
+
+#Scan Web Appkication Code    
+    - name: ShiftLeft SourceGuard Web Application Scan
+      run: |        
+            main/shiftleft sourceguard -h
       continue-on-error: true
