@@ -39,16 +39,14 @@ jobs:
 #Scan IaC code      
     - name: ShiftLeft IaC Scan
       run: |
-            chmod +x /main/shiftleft
-             ./main/shiftleft iac-assessment --path ./main
-             
+            chmod +x main/shiftleft
+            main/shiftleft iac-assessment --path main/.
       continue-on-error: true
     
  
 #Scan IaC code      
     - name: ShiftLeft IaC Scan
-      run: |
-            ls         
+      run: |        
             chmod +x shiftleft
-             ./main/shiftleft image-scan ./logicdemo.tar
+            main/shiftleft image-scan ./logicdemo.tar
       continue-on-error: true
