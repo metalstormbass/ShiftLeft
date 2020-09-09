@@ -27,5 +27,5 @@ jobs:
     - name: SourceGuard Code Scan
       run: |
             chmod +x shiftleft
-            ./shiftleft iac-assessment --path .
+            ./shiftleft iac-assessment --path . --debug
       continue-on-error: true
