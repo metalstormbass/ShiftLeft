@@ -28,11 +28,7 @@ jobs:
       run: |
             chmod +x shiftleft
              ./shiftleft iac-assessment --path . >> output.txt
-             cat output.txt
+             ls
       continue-on-error: true
     
-    - name: Upload Output
-      uses: actions/upload-artifact@v2
-      with:
-        name: output.txt
-        path: ./output.txt
+ 
