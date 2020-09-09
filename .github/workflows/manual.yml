@@ -47,5 +47,5 @@ jobs:
 #Scan IaC code      
     - name: ShiftLeft IaC Scan
       run: |        
-            main/shiftleft image-scan ./logicdemo.tar
+            main/shiftleft image-scan --path ./logicdemo.tar
       continue-on-error: true
