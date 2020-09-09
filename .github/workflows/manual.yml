@@ -34,7 +34,7 @@ jobs:
     - name: Pull Docker Container
       run: |
         docker pull yonatanph/logicdemo:latest
-        docker save logicdemo -o logicdemo.tar
+        docker save yonatanph/logicdemo:latest -o logicdemo.tar
         
 #Scan IaC code      
     - name: ShiftLeft IaC Scan
@@ -45,3 +45,10 @@ jobs:
       continue-on-error: true
     
  
+#Scan IaC code      
+    - name: ShiftLeft IaC Scan
+      run: |
+            chmod +x shiftleft
+             ./shiftleft image-scan ./logicdemo.tar
+             ls
+      continue-on-error: true
