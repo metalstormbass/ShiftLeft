@@ -27,7 +27,7 @@ jobs:
     - name: ShiftLeft IaC Scan
       run: |
             chmod +x shiftleft
-             ./shiftleft iac-assessment --path . >> output.txt
+             ./shiftleft iac-assessment --path . 
              ls
       continue-on-error: true
     
