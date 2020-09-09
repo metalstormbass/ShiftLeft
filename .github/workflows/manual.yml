@@ -34,7 +34,7 @@ jobs:
     - name: Pull Docker Container
       run: |
         docker pull yonatanph/logicdemo:latest
-        docker docker save logicdemo -o logicdemo.tar
+        docker save logicdemo -o logicdemo.tar
         
 #Scan IaC code      
     - name: ShiftLeft IaC Scan
