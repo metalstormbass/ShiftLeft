@@ -16,9 +16,9 @@ jobs:
       SG_SECRET_KEY: ${{ secrets.SG_SECRET_KEY }}   
       CHKP_CLOUDGUARD_ID: ${{ secrets.CHKP_CLOUDGUARD_ID }}
       CHKP_CLOUDGUARD_SECRET: ${{ secrets.CHKP_CLOUDGUARD_SECRET }}
-    steps:
-    - name: Setup Docker
-      uses: docker-practice/actions-setup-docker@0.0.1
+   # steps:
+    #- name: Setup Docker
+     # uses: docker-practice/actions-setup-docker@0.0.1
     
     - name: Checkout Code
       uses: actions/checkout@v1
@@ -27,5 +27,5 @@ jobs:
     - name: SourceGuard Code Scan
       run: |
             chmod +x shiftleft 
-            ./shiftleft iac-assessment -h
+            ./shiftleft iac-assessment
       continue-on-error: true
