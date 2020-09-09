@@ -53,5 +53,5 @@ jobs:
 #Scan Web Appkication Code    
     - name: ShiftLeft SourceGuard Web Application Scan
       run: |        
-            main/shiftleft sourceguard -h
+            main/shiftleft sourceguard -s /VulnerableWebApp
       continue-on-error: true
