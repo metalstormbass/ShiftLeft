@@ -1,0 +1,31 @@
+name: 'Shift Left Action'
+
+on:
+  push:
+    branches:
+    - master
+    paths:
+    - '_build_flag'
+jobs:
+  build: 
+#Set up environment
+    runs-on: ubuntu-latest
+    env:
+      working-directory: . 
+      SG_CLIENT_ID: ${{ secrets.SG_CLIENT_ID }}
+      SG_SECRET_KEY: ${{ secrets.SG_SECRET_KEY }}   
+      CHKP_CLOUDGUARD_ID: ${{ secrets.CHKP_CLOUDGUARD_ID }}
+      CHKP_CLOUDGUARD_SECRET: ${{ secrets.CHKP_CLOUDGUARD_SECRET }}
+    steps:
+    - name: Setup Docker
+      uses: docker-practice/actions-setup-docker@0.0.1
+    
+    - name: Checkout Code
+      uses: actions/checkout@v1
+
+#Scan source code      
+    - name: SourceGuard Code Scan
+      run: |
+            chmod +x shiftleft 
+            ./shiftleft iac-assessment -h
+      continue-on-error: true
