@@ -17,8 +17,7 @@ jobs:
       CHKP_CLOUDGUARD_ID: ${{ secrets.CHKP_CLOUDGUARD_ID }}
       CHKP_CLOUDGUARD_SECRET: ${{ secrets.CHKP_CLOUDGUARD_SECRET }}
     steps:
-    - name: Setup Docker
-      uses: docker-practice/actions-setup-docker@0.0.1
+ 
 #Pull Code and Images deployed by IaC    
     - name: Checkout Code
       uses: actions/checkout@v2
@@ -28,7 +27,7 @@ jobs:
     - name: Checkout tools repo
       uses: actions/checkout@v2
       with:
-        repository:  metalstormbass/SourceGuard-Example
+        repository:  metalstormbass/VulnerableWebApp
         path: VulnerableWebApp 
   
     - name: Pull Docker Container
