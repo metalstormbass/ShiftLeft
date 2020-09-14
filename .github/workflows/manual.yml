@@ -39,7 +39,7 @@ jobs:
     - name: ShiftLeft IaC Scan
       run: |
             chmod +x main/shiftleft
-            main/shiftleft iac-assessment --path main/.
+            main/shiftleft iac-assessment -r 201981 --path main/.
       continue-on-error: true
     
  
